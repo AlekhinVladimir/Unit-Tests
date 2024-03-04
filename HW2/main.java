@@ -14,5 +14,7 @@ public class main {
         double discountPercentage = scanner.nextDouble();
 
         double result = calculator.calculateDiscount(purchaseAmount, discountPercentage);
+
+        System.out.println("Result: $" + result);
     }
 }
