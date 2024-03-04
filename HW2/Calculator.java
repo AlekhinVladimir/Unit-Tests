@@ -5,7 +5,7 @@ public class Calculator {
     public double calculateDiscount(double purchaseAmount, double discountPercentage) {
         if (purchaseAmount < 0 || discountPercentage < 0 || discountPercentage > 100) {
             throw new ArithmeticException(
-                    "Invalid input. Purchase amount and discount percentage must be non-negative and discount percentage must be less than or equal to 100.");
+                    "Неверный ввод. Сумма покупки и процент скидки должны быть неотрицательными, а процент скидки должен быть меньше или равен 100.");
         }
         return purchaseAmount - (purchaseAmount * discountPercentage / 100);
     }
