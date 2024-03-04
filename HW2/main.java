@@ -1,20 +1,18 @@
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Assertions as JUnitAssertions;
+import java.util.Scanner;
 
-public class Main {
+public class main {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        double purchaseAmount = 100;
-        double discountPercentage = 10;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter purchase amount: ");
+        double purchaseAmount = scanner.nextDouble();
+
+        System.out.print("Enter discount percentage: ");
+        double discountPercentage = scanner.nextDouble();
 
         double result = calculator.calculateDiscount(purchaseAmount, discountPercentage);
-
-        // Using AssertJ
-        Assertions.assertThat(result).isEqualTo(90);
-
-        // Alternatively, using JUnit 5
-        JUnitAssertions.assertEquals(90, result, 0.001);
     }
 }

@@ -1,5 +1,3 @@
-import org.assertj.core.api.Assertions;
-
 public class Calculator {
 
     public double calculateDiscount(double purchaseAmount, double discountPercentage) {
