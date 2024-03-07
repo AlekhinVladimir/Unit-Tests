@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.Collection;
+
 public class Car extends Vehicle {
     private String company;
     private String model;
@@ -21,4 +23,8 @@ public class Car extends Vehicle {
     public int getNumWheels() { return numWheels; }
     public int getSpeed() { return speed; }
     public String toString() { return "This car is a “ + year + “ “ + make + “ “ + model + ";}
+
+    public Collection<Object> getWheels() {
+        return null;
+    }
 }
