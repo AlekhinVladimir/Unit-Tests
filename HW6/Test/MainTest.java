@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
             assertTrue(main.evenOddNumber(2)); // 2 четное, метод возвращает true
             assertFalse(main.evenOddNumber(3)); // 3 нечетное, метод возвращает false
-            assertFalse(main.evenOddNumber(0)); // 0 четное, метод возвращает true
+            assertTrue(main.evenOddNumber(0)); // 0 четное, метод возвращает true
         }
 
         @Test
