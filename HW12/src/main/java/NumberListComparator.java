@@ -1,18 +1,30 @@
 import java.util.List;
+import java.util.Objects;
 
 public class NumberListComparator {
 
     public String compareLists(List<Integer> list1, List<Integer> list2) {
-        double average1 = calculateAverage(list1);
-        double average2 = calculateAverage(list2);
+        String result;
+        double average1 = list1.stream()
+                .filter(Objects::nonNull) // Фильтруем null-значения
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
+
+        double average2 = list2.stream()
+                .filter(Objects::nonNull) // Фильтруем null-значения
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
 
         if (average1 > average2) {
-            return "Первый список имеет большее среднее значение";
+            result = "Первый список имеет большее среднее значение";
         } else if (average2 > average1) {
-            return "Второй список имеет большее среднее значение";
+            result = "Второй список имеет большее среднее значение";
         } else {
-            return "Средние значения равны";
+            result = "Средние значения равны";
         }
+        return result;
     }
 
     private double calculateAverage(List<Integer> list) {
